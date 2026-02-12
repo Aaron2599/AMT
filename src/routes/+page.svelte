@@ -180,7 +180,6 @@
         console.log(duration_in_seconds)
 
         if (duration_in_seconds > 300) {
-            target_size = 9.8
             pass_1_preset = 5
             pass_2_preset = 4
             video_resolution = 640
@@ -190,11 +189,10 @@
         }
 
         if (duration_in_seconds > 500) {
-            target_size = 9.8
-            pass_1_preset = 5
+            pass_1_preset = 4
             pass_2_preset = 3
             video_resolution = 600
-            video_fps = 19
+            video_fps = 18
             audio_bitrate = 19000
             extra_audio_flags = `-ac 1 -application voip`
         }
