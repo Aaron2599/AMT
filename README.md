@@ -20,7 +20,7 @@ The app processes files efficiently in the background, leveraging optimized pipe
 3. Launch AMT and drag a video file into the interface or paste a URL to download files.
 4. Wait for compression to complete, then access your result from the clipboard or file explorer.
 
-No additional setup required; it's built for instant use in media workflows.
+No additional setup is required.
 
 ## Releases
 
