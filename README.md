@@ -4,13 +4,14 @@ AMT is a desktop application for Downloading and compressing media files to unde
 
 ## Features
 
-- Drag and drop files or for compression.
 - Under 10MB video optimization with modern codecs.
-- Real-time progress indicators during processing.
-- Clipboard integration for seamless results sharing.
+- Video downloading from most major platforms.
+- Drag and drop files or for compression.
+- Progress indicators during processing.
+- Clipboard integration for instant sharing.
 - Notification system for completion and errors.
 
-The app processes files efficiently in the background, leveraging optimized FFmpeg pipelines for high-quality compression.
+The app processes files efficiently in the background, leveraging optimized pipelines for high-quality compression.
 
 ## Quick Start
 
