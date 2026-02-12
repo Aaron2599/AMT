@@ -157,20 +157,6 @@
 
         const fileInfo = await stat(path);
         console.log(fileInfo)
-        if (fileInfo.size < 10485760) {
-            if (compressed_to_clipboard) {
-                await writeFiles([filePath])
-                notify({
-                    title: 'File Already Below 10MB',
-                    body: `Copied it to your clipboard.`,
-                });
-            } else {
-                notify({
-                    title: 'File Already Below 10MB',
-                });
-            }
-            return
-        }
 
         await writeFile(outPath, new Uint8Array([]))
         files.push(outPath)
