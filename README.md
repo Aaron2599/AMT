@@ -16,6 +16,8 @@ The app processes files efficiently in the background, leveraging optimized pipe
 
 ## Quick Start
 
+<img src="/static/ui.png" width="358rem" >
+
 1. Download the latest release from the [Releases page](https://github.com/Aaron2599/AMT/releases).
 2. Install the app on your system (available for Windows).
 3. Launch AMT and drag a video file into the interface or paste a URL to download files.
