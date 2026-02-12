@@ -145,7 +145,7 @@
         const fileName = baseName.substring(0,baseName.length-(fileExt.length+1))
         const filePath = await dirname(path)
 
-        if (!videoExtensions.includes(fileExt)) {
+        if (!videoExtensions.includes(fileExt.toLowerCase())) {
             sendNotification({
                 title: 'That is not a valid file format',
             });
