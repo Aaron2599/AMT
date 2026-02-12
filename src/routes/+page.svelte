@@ -45,6 +45,11 @@
     /** @type {Store} */
     let store
 
+    /* Todo
+    * Better error handling & catching
+    * Develop a way for the client log detailed errors to a server?
+    */
+
     onMount(async () => {
         download_dir = await downloadDir()
         temp_dir = await tempDir()
@@ -117,6 +122,14 @@
     }
 
     async function compress_file(path) {
+
+        /* Todo
+        * Experiment with Region of interest for long files
+        * Experiment with snapping fps to common rates (21fps, 24fps) and checking its effects on quality
+        * Experiment replacing Ffmpeg with SvtAv1EncApp or Av1an for faster encoding and higher quality
+        * Find a way to add back variable frame rates without destroying quality due to SVT's RDO (Rate Distortion Optimization)
+        */
+
         console.log(path)
         if(!path){
             return
@@ -279,6 +292,14 @@
     let url_input = $state()
 
     async function download() {
+
+        /* Todo
+        * Find a way to extract file names ahead of time
+        * Add and option to copy outputs to the clipboard
+        * Add an option to download audio only
+        * Catch errors
+        */
+
         download_tasks += 1
         await run_command('yt-dlp', `-U`)
         await run_command('yt-dlp', `-o "${download_dir}\\%(title)s.%(ext)s" --no-mtime ${url_input}`)
