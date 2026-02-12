@@ -1,4 +1,4 @@
-# AMT (Agarthian Media Tools)
+# AMT, Agarthian Media Tools
 
 AMT is a desktop application for Downloading and compressing media files to under 10MB using advanced encoding techniques. It features a drag-and-drop interface for easy file selection, with options enabled by default that copy compressed outputs directly to the clipboard.
 
