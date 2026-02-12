@@ -16,7 +16,7 @@ The app processes files efficiently in the background, leveraging optimized pipe
 
 ## Quick Start
 
-<img src="/static/ui.png" style="padding: 0.5rem" width="358rem" >
+<img src="/static/ui.png" hspace="10rem" width="358rem" >
 
 - Download the latest release from the [Releases page](https://github.com/Aaron2599/AMT/releases).
 - Install the app on your system (available for Windows).
