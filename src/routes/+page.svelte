@@ -170,7 +170,7 @@
         let video_fps = 23
         let audio_bitrate = 40000
         let pass_1_preset = 9
-        let pass_2_preset = 7
+        let pass_2_preset = 5
         let extra_audio_flags = ""
 
         const ffprobe_command = `-v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${path}"`
@@ -191,9 +191,9 @@
         if (duration_in_seconds > 500) {
             pass_1_preset = 4
             pass_2_preset = 3
-            video_resolution = 600
+            video_resolution = 640
             video_fps = 18
-            audio_bitrate = 19000
+            audio_bitrate = 18000
             extra_audio_flags = `-ac 1 -application voip`
         }
 

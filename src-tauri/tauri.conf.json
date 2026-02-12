@@ -34,7 +34,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": "msi",
     "externalBin": [
       "binaries/ffmpeg",
       "binaries/ffprobe",
