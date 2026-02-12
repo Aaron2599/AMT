@@ -182,10 +182,10 @@
 
         let target_size = 9.85
         let video_resolution = 900
-        let video_fps = 23
-        let audio_bitrate = 40000
-        let pass_1_preset = 9
-        let pass_2_preset = 5
+        let video_fps = 24
+        let audio_bitrate = 42000
+        let pass_1_preset = 10
+        let pass_2_preset = 6
         let extra_audio_flags = ""
 
         const ffprobe_command = `-v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${path}"`
@@ -193,6 +193,12 @@
         console.log(ffprobe_output)
         const duration_in_seconds = parseFloat(ffprobe_output.stdout.trim())
         console.log(duration_in_seconds)
+
+        if (duration_in_seconds > 80) {
+            pass_1_preset = 9
+            pass_2_preset = 5
+            audio_bitrate = 40000
+        }
 
         if (duration_in_seconds > 300) {
             pass_1_preset = 5
