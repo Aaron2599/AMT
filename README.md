@@ -16,12 +16,12 @@ The app processes files efficiently in the background, leveraging optimized pipe
 
 ## Quick Start
 
-<img src="/static/ui.png" width="358rem" >
+<img src="/static/ui.png" style="padding: 0.5rem" width="358rem" >
 
-1. Download the latest release from the [Releases page](https://github.com/Aaron2599/AMT/releases).
-2. Install the app on your system (available for Windows).
-3. Launch AMT and drag a video file into the interface or paste a URL to download files.
-4. Wait for compression to complete, then access your result from the clipboard or file explorer.
+- Download the latest release from the [Releases page](https://github.com/Aaron2599/AMT/releases).
+- Install the app on your system (available for Windows).
+- Launch AMT and drag a video file into the interface or paste a URL to download files.
+- Wait for compression to complete, then access your result from the clipboard or file explorer.
 
 No additional setup is required.
 
