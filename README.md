@@ -23,26 +23,6 @@ The app processes files efficiently in the background, leveraging optimized pipe
 
 No additional setup is required.
 
-## Releases
-
-### v0.1.0-beta (Latest)
-
-- Improved compression algorithms for better file size reduction without quality loss.
-- Added URL download support for remote media.
-- Enhanced UI with dark theme and notifications.
-- Bug fixes for large file handling.
-  Download: [v0.1.0-beta](https://github.com/Aaron2599/AMT/releases/tag/v0.1.0-beta)
-
-
-### v0.0.1-alpha
-
-- Initial drag-and-drop compression interface.
-- Basic file processing and clipboard export.
-- Core media optimization engine.
-  Download: [v0.0.1-alpha](https://github.com/Aaron2599/AMT/releases/tag/v0.0.1-alpha)
-
-These releases mark progressive improvements, starting from core functionality in alpha to polished beta features.
-
 ## Building from Source
 
 AMT is built with modern web technologies including Tauri for desktop packaging, SvelteKit for the frontend.
