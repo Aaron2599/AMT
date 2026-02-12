@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+html, body {
+    background: #2f2f2f;
+}
+
+body {
+    /* The stack starts with Windows, then moves to specific Linux/macOS defaults */
+    font-family:
+            "Segoe UI",         /* Windows */
+            Roboto,             /* Android / ChromeOS */
+            "Helvetica Neue",   /* Older macOS/iOS */
+            Arial,              /* Universal fallback */
+            "Liberation Sans",  /* Linux (Metrically compatible with Arial) */
+            "Ubuntu",           /* Ubuntu Linux */
+            "Cantarell",        /* GNOME (Fedora/Debian) */
+            "Noto Sans",        /* KDE / Generic Linux */
+            sans-serif;         /* Final browser default */
+
+    /* Optional: Improves rendering on most browsers */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
