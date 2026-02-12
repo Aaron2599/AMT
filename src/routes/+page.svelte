@@ -183,6 +183,7 @@
         let target_size = 9.85
         let video_resolution = 900
         let video_fps = 24
+        let keyint = 300
         let audio_bitrate = 42000
         let pass_1_preset = 10
         let pass_2_preset = 6
@@ -198,6 +199,7 @@
             pass_1_preset = 9
             pass_2_preset = 5
             audio_bitrate = 40000
+            keyint = 600
         }
 
         if (duration_in_seconds > 300) {
@@ -207,6 +209,7 @@
             video_fps = 22
             audio_bitrate = 22000
             extra_audio_flags = `-ac 1`
+            keyint = 900
         }
 
         if (duration_in_seconds > 500) {
@@ -215,6 +218,7 @@
             video_resolution = 640
             video_fps = 18
             audio_bitrate = 18000
+            keyint = 1200
             extra_audio_flags = `-ac 1 -application voip`
         }
 
@@ -253,7 +257,7 @@
             const video_bitrate = Math.round(((((target_size - audio_size) * 8 * 1000000)/total_frames) * (total_frames / duration_in_seconds)))
             console.log(`vbr: ${video_bitrate}`)
 
-            const svtav1_params = `"tune=0:film-grain-denoise=0:enable-overlays=1:enable-qm=1:keyint=900:scd=1:rc=1:rc-lookahead=120:hierarchical-levels=5"`
+            const svtav1_params = `"tune=0:film-grain-denoise=0:enable-overlays=1:enable-qm=1:keyint=${keyint}:scd=1:rc=1:rc-lookahead=120:hierarchical-levels=5"`
 
             const first_pass_command = ` -i "${intermediate_out_path}" -c:v libsvtav1 -row-mt 1 -preset ${pass_1_preset} -svtav1-params ${svtav1_params} -pix_fmt yuv420p10le -threads 0 -movflags +faststart -b:v ${video_bitrate} -pass 1 -passlogfile ${log_file} -an -f null NUL`
             const first_pass_output = await run_command('ffmpeg', first_pass_command)
