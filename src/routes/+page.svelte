@@ -124,6 +124,8 @@
     async function compress_file(path) {
 
         /* Todo
+        * Find a way to detect the overall "sharpness" and selectively apply gblur to avoid adding extra blur
+        * For files that dont have audio, or audio size prediction fails remove audio with -an
         * Experiment with Region of interest for long files
         * Experiment with snapping fps to common rates (21fps, 24fps) and checking its effects on quality
         * Experiment replacing Ffmpeg with SvtAv1EncApp or Av1an for faster encoding and higher quality
@@ -178,7 +180,7 @@
         console.log(fileName)
         console.log(filePath)
 
-        let target_size = 9.8
+        let target_size = 9.85
         let video_resolution = 900
         let video_fps = 23
         let audio_bitrate = 40000
@@ -210,7 +212,7 @@
             extra_audio_flags = `-ac 1 -application voip`
         }
 
-        let audio_size = 0
+        let audio_size = 0.3
         // render audio to figure out how many MB's it takes up
         try {
             const audio_outpath = `${temp_dir}${Date.now()}.opus`
@@ -228,7 +230,9 @@
 
 
         try {
-            const video_filter = `"fps=${video_fps},atadenoise,zscale=-2:'trunc(if(gt(ih,${video_resolution}),${video_resolution},ih)/2)*2':f=spline36:d=error_diffusion,hqdn3d=4:4:2:2,gblur=sigma=0.8:steps=1:enable='gte(h,900)',fspp=quality=4"`
+
+            // gblur exists to prevent an oversharp aliased look on discord with clean videos above 1080p.
+            const video_filter = `"fps=${video_fps},atadenoise,zscale=-2:'trunc(if(gt(ih,${video_resolution}),${video_resolution},ih)/2)*2':f=spline36:d=error_diffusion,hqdn3d=4:4:2:2,gblur=sigma=0.81:steps=1:enable='gte(h,900)',fspp=quality=4"`
 
             const intermediate_pass_command = ` -i "${path}" -c:v libx264 -preset ultrafast -c:a copy -crf 0 -vf ${video_filter} -threads 0 "${intermediate_out_path}"`
             const intermediate_pass_output = await run_command('ffmpeg', intermediate_pass_command)
